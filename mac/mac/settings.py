@@ -74,11 +74,15 @@ WSGI_APPLICATION = 'mac.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
+# postgres -D /usr/local/var/postgres to start postgres
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mac_database',
+        'USER': 'mac_user',
+        'PASSWORD': 'mac_password',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
